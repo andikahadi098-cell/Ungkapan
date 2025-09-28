@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kartu Ungkapan</title>
+<style>
+  body {
+    font-family: Tahoma, Arial;
+    background: #fffaf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .wrap {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    width: 360px;
+  }
+  input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+  }
+  button {
+    background: #c2185b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+  button:hover {
+    background: #a01349;
+  }
+  .card {
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: 10px;
+    background: linear-gradient(180deg,#fff,#fff4f6);
+    text-align: center;
+    display: none;
+  }
+  .name {
+    font-weight: 700;
+    color: #c2185b;
+  }
+  .from {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h3>Ungkapan perasaan saat ini 💌</h3>
+    <input id="to" placeholder="Kiky">
+    <input id="from" placeholder="Dika">
+    <button id="make">Buat Kartu</button>
+
+    <div class="card" id="card">
+      <div>Hai <span class="name" id="toName"></span>,</div>
+      <div id="text" style="margin-top:10px">
+        Aku cuma mau bilang kalau kamu sangat istimewa.
+      </div>
+      <div class="from" id="fromName"></div>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('make').addEventListener('click', () => {
+    const to = document.getElementById('to').value.trim() || "Kiky";
+    const from = document.getElementById('from').value.trim() || "Andika";
+    document.getElementById('toName').textContent = to;
+    document.getElementById('fromName').textContent = "— " + from;
+    document.getElementById('card').style.display = 'block';
+  });
+</script>
+</body>
+</html>
